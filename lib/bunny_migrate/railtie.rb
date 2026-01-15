@@ -1,5 +1,8 @@
 module BunnyMigrate
   class Railtie < Rails::Railtie
-    Dir[File.join(__dir__, 'tasks/*.rake')].each { load it }
+    rake_tasks do
+      path = File.expand_path('tasks/bunny.rake', __dir__)
+      load path if defined?(Rake.application)
+    end
   end
 end
