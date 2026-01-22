@@ -18,6 +18,7 @@ module BunnyMigrate
     def status
       puts 'Migration status:'
 
+      puts applied_versions
       migrations.each do |migration|
         if applied_versions.include?(migration.name)
           puts "  [x] #{migration.name}"
@@ -37,7 +38,7 @@ module BunnyMigrate
     end
 
     def applied_versions
-      VersionStore.pluck(:version)
+      BunnyMigrate::VersionStore.pluck(:version)
     end
 
     def applied_migrations
@@ -49,11 +50,11 @@ module BunnyMigrate
     end
 
     def record(migration)
-      VersionStore.create!(version: migration.name)
+      BunnyMigrate::VersionStore.create!(version: migration.name)
     end
 
     def remove(migration)
-      VersionStore.where(version: migration.name).delete_all
+      BunnyMigrate::VersionStore.where(version: migration.name).delete_all
     end
 
     def classify(str)

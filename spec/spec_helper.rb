@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require_relative 'dummy/config/environment'
+require 'support/active_record'
+require 'support/schema'
 require 'bunny_migrate'
 
 RSpec.configure do |config|
