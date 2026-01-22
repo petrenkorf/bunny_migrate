@@ -4,6 +4,6 @@ module BunnyMigrate
 
     validates :version, :applied_at, presence: true
 
-    before_save { self.applied_at = Time.now.utc }
+    before_validation { self.applied_at = Time.now.utc }
   end
 end
