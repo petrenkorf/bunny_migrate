@@ -1,6 +1,6 @@
 module BunnyMigrate
   class VersionStore < ::ActiveRecord::Base
-    self.table_name = 'rabbitmq_migrations'
+    self.table_name = 'bunny_migrations'
 
     validates :version, :applied_at, presence: true
 
