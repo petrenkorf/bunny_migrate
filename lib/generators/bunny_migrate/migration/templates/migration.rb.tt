@@ -1,0 +1,11 @@
+class <%= class_name %> < BunnyMigrate::Migration
+  def up
+    # create_exchange "example"
+    # create_queue "example"
+  end
+
+  def down
+    # delete_exchange "example"
+    # delete_queue "example"
+  end
+end
