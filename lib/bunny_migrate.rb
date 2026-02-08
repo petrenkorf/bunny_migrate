@@ -7,5 +7,4 @@ require 'bunny_migrate/version_store'
 
 module BunnyMigrate
   class Error < StandardError; end
-  # Your code goes here...
 end

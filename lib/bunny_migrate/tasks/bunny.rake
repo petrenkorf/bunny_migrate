@@ -4,14 +4,16 @@ namespace :bunny do
     BunnyMigrate::Migrator.new.migrate
   end
 
-  desc "Rollback last RabbitMQ migration"
-  task :rollback => :environment do
-    BunnyMigrate::Migrator.new.rollback
-  end
+  namespace :migrate do
+    desc "Rollback last RabbitMQ migration"
+    task :rollback => :environment do
+      BunnyMigrate::Migrator.new.rollback
+    end
 
-  desc "Show migration status"
-  task :status => :environment do
-    BunnyMigrate::Migrator.new.status
+    desc "Show migration status"
+    task :status => :environment do
+      BunnyMigrate::Migrator.new.status
+    end
   end
 
   desc "Install bunny_migrate migrations"

@@ -9,7 +9,7 @@ RSpec.describe 'BunnyMigrate Rake tasks' do
 
   it { expect(Rake::Task.task_defined?('bunny:migrate')).to be true }
 
-  it { expect(Rake::Task.task_defined?('bunny:rollback')).to be true }
+  it { expect(Rake::Task.task_defined?('bunny:migrate:rollback')).to be true }
 
-  it { expect(Rake::Task.task_defined?('bunny:status')).to be true }
+  it { expect(Rake::Task.task_defined?('bunny:migrate:status')).to be true }
 end
