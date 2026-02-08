@@ -2,7 +2,6 @@
 
 require_relative 'bunny_migrate/version'
 require_relative 'bunny_migrate/railtie' if defined?(Rails)
-require 'bunny_migrate/cli'
 require 'bunny_migrate/migrator'
 require 'bunny_migrate/version_store'
 
